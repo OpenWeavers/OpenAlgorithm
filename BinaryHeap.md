@@ -16,7 +16,6 @@ For more information about Binary Heap, visit [Wikipedia](https://en.wikipedia.o
 | `-capacity` : Maximum Number of items         |
 | `-count`    : Current Number of items         |
 | `-type`     : Type of Heap (Min or Max)       |
-| *** |
 | `+BinaryHeap()` : Construct Empty Binary Heap |
 | `+BinaryHeap(t : HeapType)` : Construct Binary Heap of type `t` |
 | `+BinaryHeap(c : Collection)` : Construct Binary Heap from Collection `c` |
@@ -28,8 +27,10 @@ For more information about Binary Heap, visit [Wikipedia](https://en.wikipedia.o
 | `+remove() : Comparable` : Deletes a element from Heap |
 | Make the Collection Iterable using `foreach` like Language Constructs|
 
-## Language Specific Implementations
- [Heap.cs] (../CSharp/Algorithm/Program.cs)
+## Implementations
+ * [C#](../CSharp/Algorithm/Program.cs)
+ * Java (Comming Soon ...)
+ * Python (Comming Soon ...)
 
 ## Note
 You are free to add more methods, if you feel that it should be reflected here, Modify this file!
