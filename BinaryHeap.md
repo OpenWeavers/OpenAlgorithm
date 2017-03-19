@@ -28,7 +28,7 @@ For more information about Binary Heap, visit [Wikipedia](https://en.wikipedia.o
 | Make the Collection Iterable using `foreach` like Language Constructs|
 
 ## Implementations
- * [C#](../CSharp/Algorithm/Program.cs)
+ * [C#](../CSharp/Algorithm/BinaryHeap.cs)
  * Java (Comming Soon ...)
  * Python (Comming Soon ...)
 
