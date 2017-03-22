@@ -29,7 +29,7 @@ For more information about Binary Heap, visit [Wikipedia](https://en.wikipedia.o
 
 ## Implementations
  * [C#](../CSharp/Algorithm/BinaryHeap.cs)
- * [Java](../Java/Algorithm/src/org/openalgorithm/BinaryHeap.java)
+ * [Java](../Java/src/org/openalgorithm/BinaryHeap.java)
  * [Python](../Python/HeapSort.py)
 
 ## Note
