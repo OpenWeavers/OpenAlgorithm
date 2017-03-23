@@ -13,7 +13,7 @@ public class Main { //Testing HeapSort!
         for(String s : string.split("\\s+"))    {
             arr[i++] = Integer.parseInt(s);
         }
-        BinaryHeap<Integer> binaryHeap = new BinaryHeap<>(arr,HeapType.minHeap);
+        BinaryHeap<Integer> binaryHeap = new BinaryHeap<>(arr,HeapType.maxHeap);
         for (i = 0;i < arr.length;i++)  {
             try {
                 System.out.println(binaryHeap.remove());
