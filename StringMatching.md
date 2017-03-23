@@ -1,4 +1,4 @@
-# Sorting 
+# String Matching 
 Implements several String Matching Algorithms
 
 String matching is a problem where a given `pattern` of length `m` has to be searched in given `text` of size `n`, and if the `text` contains the `pattern`, the first matching index `i` has to be returned.
