@@ -14,14 +14,14 @@ public class Main { //Testing HeapSort!
             arr[i++] = Integer.parseInt(s);
         }
         BinaryHeap<Integer> binaryHeap = new BinaryHeap<>(arr,HeapType.maxHeap);
-        for (i = 0;i < arr.length;i++)  {
-            try {
-                System.out.println(binaryHeap.remove());
-            }
-            catch (InvalidOperationException e) {
-                System.out.println(e.getMessage());
-                System.exit(0);
-            }
+        System.out.println("BinaryHeap traversal :");
+        for(Integer t : binaryHeap)   {
+            System.out.println(t);
         }
+        System.out.println("HeapSort : ");
+        Integer[] sorted = Sort.heapSort(arr,HeapType.maxHeap);
+        for(Integer x : sorted)
+            System.out.println(x);
+
     }
 }

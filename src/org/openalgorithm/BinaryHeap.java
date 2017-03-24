@@ -1,5 +1,6 @@
 package org.openalgorithm;
 
+import java.util.Iterator;
 import java.util.function.BiFunction;
 
 final class HeapNode<T extends Comparable<T>> implements Comparable<HeapNode<T>>   {
@@ -15,12 +16,28 @@ final class HeapNode<T extends Comparable<T>> implements Comparable<HeapNode<T>>
     }
 }
 
-public class BinaryHeap<T extends Comparable<T>> {
+public class BinaryHeap<T extends Comparable<T>> implements Iterable<T> {
     private BiFunction<HeapNode<T>,HeapNode<T>,Boolean> comparer;
     private HeapType heapType;
     private int capacity;
     private int count;
     private HeapNode<T>[] elements;
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private int iteratorIndex=1;
+            @Override
+            public boolean hasNext() {
+                return iteratorIndex <= count;
+            }
+
+            @Override
+            public T next() {
+                return elements[iteratorIndex++].data;
+            }
+        };
+    }
 
     public long getCount() {
         return count;
@@ -60,7 +77,6 @@ public class BinaryHeap<T extends Comparable<T>> {
         }
         elements[insertPosition] = heapNode;
     }
-
     public T remove() throws InvalidOperationException   {
         if(count == 0)
             throw new InvalidOperationException("No items to remove");
