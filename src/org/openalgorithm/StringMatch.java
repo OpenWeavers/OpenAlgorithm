@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class StringMatch {
 
-    public static int patternMatch(String text, String pattern) {
+    public static int horspool(String text, String pattern) {
         HashMap<Character, Integer> hashMap = getShiftTable(pattern);
         int patternLength = pattern.length();
         int textLength = text.length();
@@ -32,7 +32,7 @@ public class StringMatch {
         String text = new Scanner(System.in).nextLine();
         System.out.print("Enter the pattern : ");
         String pattern = new Scanner(System.in).nextLine();
-        int position = patternMatch(text, pattern);
+        int position = horspool(text, pattern);
         if (position != -1)
             System.out.println("Pattern " + pattern + " found at location index " + position);
         else
