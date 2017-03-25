@@ -31,7 +31,7 @@ namespace OpenAlgorithm {
 			return -1;
 		}
 
-		public static void Main(String[] args) {
+		public static void Main(string[] args) {
 			Console.WriteLine("Text Please");
 			string text = Console.ReadLine().Trim();
 			string pattern = Console.ReadLine().Trim();
