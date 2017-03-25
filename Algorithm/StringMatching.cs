@@ -17,7 +17,7 @@ namespace OpenAlgorithm {
 			return table;
 		}
 
-		public static int HorsPool(string text,string pattern) {
+		public static int Horspool(string text,string pattern) {
 			var shiftTable = GetShiftTable(pattern);
 			for (int i = pattern.Length - 1; i < text.Length; i += shiftTable.Get(text[i]) ?? pattern.Length) {
 				int j;
@@ -35,7 +35,7 @@ namespace OpenAlgorithm {
 			Console.WriteLine("Text Please");
 			string text = Console.ReadLine().Trim();
 			string pattern = Console.ReadLine().Trim();
-			Console.WriteLine(HorsPool(text, pattern));
+			Console.WriteLine(Horspool(text, pattern));
 			Console.ReadKey();
 		}
 	}
