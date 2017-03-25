@@ -12,8 +12,8 @@ namespace OpenAlgorithm {
 
 		private static Dictionary<char,int?> GetShiftTable(string pattern) {
 			var table = new Dictionary<char, int?>();
-			for (int i = 0; i < pattern.Length; i++)
-				table[pattern[i]] = pattern.Length - i + 1;
+			for (int i = 0; i < pattern.Length - 1; i++)
+				table[pattern[i]] = pattern.Length - i - 1;
 			return table;
 		}
 
@@ -36,6 +36,8 @@ namespace OpenAlgorithm {
 			string text = Console.ReadLine().Trim();
 			string pattern = Console.ReadLine().Trim();
 			Console.WriteLine(Horspool(text, pattern));
+			Console.WriteLine("Text is " + text);
+			Console.WriteLine("Pattern is " + pattern);
 			Console.ReadKey();
 		}
 	}
