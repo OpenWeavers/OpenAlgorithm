@@ -12,7 +12,7 @@
             "preLaunchTask": "",
             "runtimeExecutable": null,
             "env": {},
-            "console": true
+            "console": "integratedTerminal"
         },
         {
             "name": "Attach",
