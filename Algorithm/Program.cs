@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Algorithm {
+namespace OpenAlgorithm {
 	class Program {
 		static void Main(string[] args) {
 			Console.WriteLine("How many elements");

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Algorithm {
+namespace OpenAlgorithm {
 	public static class Sort {
 
 		private static int[] Merge(int[] A, int[] B) {
