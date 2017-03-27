@@ -80,7 +80,7 @@ namespace OpenAlgorithm {
 				Add(element);
 		}
 
-		public BinaryHeap() : this(10, HeapType.Max) { }
+		public BinaryHeap() : this(10, HeapType.Min) { }
 
 		public BinaryHeap(ICollection<T> elements) : this(elements, HeapType.Min) { }
 
