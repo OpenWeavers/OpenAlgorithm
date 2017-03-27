@@ -15,8 +15,8 @@ public final class Sort {
         return sorted;
     }
 
-    private static Integer[] merge(Integer[] a, Integer[] b) {
-        Integer[] merged = new Integer[a.length + b.length];
+    private static double[] merge(double[] a, double[] b) {
+        double[] merged = new double[a.length + b.length];
         int i = 0, j = 0, k = 0;
         while (i < a.length && j < b.length)
             if (a[i] <= b[j])
@@ -30,14 +30,14 @@ public final class Sort {
         return merged;
     }
 
-    public static Integer[] mergeSort(Integer[] array)  {
+    public static double[] mergeSort(double[] array)  {
         if(array.length == 1)
             return array;
-        Integer[] left = new Integer[array.length / 2];
+        double[] left = new double[array.length / 2];
 		//for (int i = 0; i < array.length / 2; i++)
 		//	left[i] = array[i];
         System.arraycopy(array,0,left,0,array.length / 2);
-		Integer[] right = new Integer[array.length - array.length / 2];
+		double[] right = new double[array.length - array.length / 2];
 		//for (int i = 0; i < array.length - array.length / 2; i++)
 		//	right[i] = array[array.length / 2 + i];
         System.arraycopy(array,array.length / 2,right,0,array.length - array.length / 2);

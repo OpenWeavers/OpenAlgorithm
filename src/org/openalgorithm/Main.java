@@ -7,14 +7,14 @@ public class Main { //Testing mergeSort!
         System.out.println("Enter number of items : ");
         int size = new Scanner(System.in).nextInt();
         System.out.println("Enter items : ");
-        Integer[] arr = new Integer[size];
+        double[] arr = new double[size];
         int i = 0;
         String string = new Scanner(System.in).nextLine();
         for(String s : string.split("\\s+"))    {
-            arr[i++] = Integer.parseInt(s);
+            arr[i++] = Double.parseDouble(s);
         }
-        Integer[] sorted = Sort.mergeSort(arr);
-        for(Integer x : sorted)
+        double[] sorted = Sort.mergeSort(arr);
+        for(double x : sorted)
             System.out.println(x);
 
     }
