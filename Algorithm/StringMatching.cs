@@ -30,15 +30,5 @@ namespace OpenAlgorithm {
 			}
 			return -1;
 		}
-
-		public static void Main(string[] args) {
-			Console.WriteLine("Text Please");
-			string text = Console.ReadLine().Trim();
-			string pattern = Console.ReadLine().Trim();
-			Console.WriteLine(Horspool(text, pattern));
-			Console.WriteLine("Text is " + text);
-			Console.WriteLine("Pattern is " + pattern);
-			Console.ReadKey();
-		}
 	}
 }
