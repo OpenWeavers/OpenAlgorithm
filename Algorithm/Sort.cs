@@ -74,7 +74,7 @@ namespace OpenAlgorithm {
 			for (int i = 0; i < arr.Length; i++) {
 				int swaps = 0;
 				for (int j = 0; j < arr.Length - i - 1; j++) 
-					if (sorted[j + 1].CompareTo(sorted[j]) > 0) {
+					if (sorted[j + 1].CompareTo(sorted[j]) < 0) {
 						T temp = sorted[j];
 						sorted[j] = sorted[j + 1];
 						sorted[j + 1] = temp;
@@ -86,7 +86,7 @@ namespace OpenAlgorithm {
 		}
 
 		public static T[] HeapSort<T>(T[] A) where T : IComparable<T> {
-			BinaryHeap<T> heap = new BinaryHeap<T>(A, HeapType.Max);
+			BinaryHeap<T> heap = new BinaryHeap<T>(A);
 			Console.WriteLine();
 			T[] sorted = new T[heap.Count];
 			int i = 0;
