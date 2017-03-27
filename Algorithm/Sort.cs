@@ -3,11 +3,11 @@
 namespace OpenAlgorithm {
 	public static class Sort {
 
-		private static int[] Merge(int[] A, int[] B) {
-			int[] merged = new int[A.Length + B.Length];
+		private static T[] Merge<T>(T[] A, T[] B) where T : IComparable<T> {
+			T[] merged = new T[A.Length + B.Length];
 			int i = 0, j = 0, k = 0;
 			while (i < A.Length && j < B.Length)
-				if (A[i] <= B[j])
+				if (A[i].CompareTo(B[j]) <= 0)
 					merged[k++] = A[i++];
 				else
 					merged[k++] = B[j++];
@@ -18,13 +18,13 @@ namespace OpenAlgorithm {
 			return merged;
 		}
 
-		public static int[] MergeSort(int[] A) {
+		public static T[] MergeSort<T>(T[] A) where T : IComparable<T> {
 			if (A.Length <= 1)
 				return A;
-			int[] left = new int[A.Length / 2];
+			T[] left = new T[A.Length / 2];
 			for (int i = 0; i < A.Length / 2; i++)
 				left[i] = A[i];
-			int[] right = new int[A.Length - A.Length / 2];
+			T[] right = new T[A.Length - A.Length / 2];
 			for (int i = 0; i < A.Length - A.Length / 2; i++)
 				right[i] = A[A.Length / 2 + i];
 			left = MergeSort(left);
@@ -32,19 +32,19 @@ namespace OpenAlgorithm {
 			return Merge(left, right);
 		}
 
-		private static void Swap(ref int a, ref int b) {
-			int temp = a;
+		private static void Swap<T>(ref T a, ref T b) {
+			T temp = a;
 			a = b;
 			b = temp;
 		}
 
-		private static int Split(int[] A, int left, int right) {
-			int pivot = A[left];
+		private static int Split<T>(T[] A, int left, int right) where T : IComparable<T> {
+			T pivot = A[left];
 			int i = left + 1, j = right;
 			while (i < j) {
-				while (i < right && A[i] <= pivot)
+				while (i < right && A[i].CompareTo(pivot) <= 0)
 					i++;
-				while (j > left && A[j] > pivot)
+				while (j > left && A[j].CompareTo(pivot) > 0)
 					j--;
 				Swap(ref A[i], ref A[j]);
 			}
@@ -53,7 +53,7 @@ namespace OpenAlgorithm {
 			return j;
 		}
 
-		private static void QuickSort(int[] A, int left, int right) {
+		private static void QuickSort<T>(T[] A, int left, int right) where T : IComparable<T> {
 			if (left >= right)
 				return;
 			int splitPos = Split(A, left, right);
@@ -61,18 +61,34 @@ namespace OpenAlgorithm {
 			QuickSort(A, splitPos + 1, right);
 		}
 
-		public static int[] QuickSort(int[] A) {
-			int[] B = new int[A.Length];
+		public static T[] QuickSort<T>(T[] A) where T : IComparable<T> {
+			T[] B = new T[A.Length];
 			A.CopyTo(B, 0);
 			QuickSort(B, 0, B.Length - 1);
 			return B;
 		}
 
-		public static int[] HeapSort(int[] A) {
-			BinaryHeap<int> heap = new BinaryHeap<int>(A, HeapType.Max);
-			Console.WriteLine(heap.Contains(8));
+		public static T[] BubbleSort<T>(T[] arr) where T : IComparable<T> {
+			var sorted = new T[arr.Length];
+			Array.Copy(arr, sorted, arr.Length);
+			for (int i = 0; i < arr.Length; i++) {
+				int swaps = 0;
+				for (int j = 0; j < arr.Length - i - 1; j++) 
+					if (sorted[j + 1].CompareTo(sorted[j]) > 0) {
+						T temp = sorted[j];
+						sorted[j] = sorted[j + 1];
+						sorted[j + 1] = temp;
+					}
+				if (swaps == 0)
+					break;
+			}
+			return sorted;
+		}
+
+		public static T[] HeapSort<T>(T[] A) where T : IComparable<T> {
+			BinaryHeap<T> heap = new BinaryHeap<T>(A, HeapType.Max);
 			Console.WriteLine();
-			int[] sorted = new int[heap.Count];
+			T[] sorted = new T[heap.Count];
 			int i = 0;
 			while (heap.Count != 0)
 				sorted[i++] = heap.Remove();
