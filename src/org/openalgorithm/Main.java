@@ -13,7 +13,7 @@ public class Main { //Testing mergeSort!
         for(String s : string.split("\\s+"))    {
             arr[i++] = Double.parseDouble(s);
         }
-        double[] sorted = Sort.mergeSort(arr);
+        double[] sorted = Sort.heapSort(arr,HeapType.maxHeap);
         for(double x : sorted)
             System.out.println(x);
 

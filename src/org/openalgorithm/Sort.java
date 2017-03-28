@@ -1,12 +1,16 @@
 package org.openalgorithm;
 
 public final class Sort {
-    public static Integer[] heapSort(Integer[] array, HeapType heapType)    {
-        BinaryHeap<Integer> binaryHeap = new BinaryHeap<>(array, heapType);
-        Integer[] sorted = new Integer[array.length];
+    public static double[] heapSort(double[] array, HeapType heapType)    {
+        Double[] dArray = new Double[array.length];
+        for(int i = 0;i < array.length;i++)
+            dArray[i] = array[i];
+        BinaryHeap<Double> binaryHeap = new BinaryHeap<>(dArray, heapType);
+        double[] sorted = new double[dArray.length];
         for (int i = 0;i < array.length;i++)  {
             try {
                 sorted[i] = binaryHeap.remove();
+
             }
             catch (InvalidOperationException e) {
                 System.out.println(e.getMessage());
