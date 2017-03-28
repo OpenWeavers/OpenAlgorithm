@@ -37,13 +37,7 @@ public final class Sort {
         if(array.length == 1)
             return array;
         T[] left = Arrays.copyOf(array, array.length / 2);
-        //for (int i = 0; i < array.length / 2; i++)
-        //	left[i] = array[i];
-        System.arraycopy(array,0,left,0,array.length / 2);
-        T[] right = Arrays.copyOf(array,array.length - array.length / 2);
-        //for (int i = 0; i < array.length - array.length / 2; i++)
-        //	right[i] = array[array.length / 2 + i];
-        System.arraycopy(array,array.length / 2,right,0,array.length - array.length / 2);
+        T[] right = Arrays.copyOfRange(array, array.length / 2 , array.length);
         left = mergeSort(left);
         right = mergeSort(right);
         return merge(left, right);
