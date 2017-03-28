@@ -7,14 +7,14 @@ public class Main { //Testing mergeSort!
         System.out.println("Enter number of items : ");
         int size = new Scanner(System.in).nextInt();
         System.out.println("Enter items : ");
-        Double[] arr = new Double[size];
+        String[] arr = new String[size];
         int i = 0;
         String string = new Scanner(System.in).nextLine();
         for(String s : string.split("\\s+"))    {
-            arr[i++] = Double.parseDouble(s);
+            arr[i++] = s;
         }
-        Double[] sorted = Sort.heapSort(arr,HeapType.maxHeap);
-        for(double x : sorted)
+        String[] sorted = Sort.mergeSort(arr);
+        for(String x : sorted)
             System.out.println(x);
 
     }
