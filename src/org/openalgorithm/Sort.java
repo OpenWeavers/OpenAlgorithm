@@ -38,15 +38,15 @@ public final class Sort {
         if(array.length == 1)
             return array;
         double[] left = new double[array.length / 2];
-		//for (int i = 0; i < array.length / 2; i++)
-		//	left[i] = array[i];
+	//for (int i = 0; i < array.length / 2; i++)
+	//	left[i] = array[i];
         System.arraycopy(array,0,left,0,array.length / 2);
-		double[] right = new double[array.length - array.length / 2];
-		//for (int i = 0; i < array.length - array.length / 2; i++)
-		//	right[i] = array[array.length / 2 + i];
+	double[] right = new double[array.length - array.length / 2];
+	//for (int i = 0; i < array.length - array.length / 2; i++)
+	//	right[i] = array[array.length / 2 + i];
         System.arraycopy(array,array.length / 2,right,0,array.length - array.length / 2);
-		left = mergeSort(left);
-		right = mergeSort(right);
-		return merge(left, right);
+	left = mergeSort(left);
+	right = mergeSort(right);
+	return merge(left, right);
     }
 }
