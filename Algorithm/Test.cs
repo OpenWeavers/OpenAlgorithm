@@ -7,15 +7,22 @@ using System.Threading.Tasks;
 namespace OpenAlgorithm {
 	class Test {
 		public static void Main(string[] args) {
-			Console.WriteLine("Texts Please");
-			string[] tokens = Console.ReadLine().Split();
-			//int[] tokens = new int[] { 10, 28, 1, 3, 29, 12 };
-			foreach (var s in tokens)
-				Console.WriteLine(s);
-			var sorted = Sort.QuickSort(tokens);
+			Console.WriteLine("How many elements");
+			int n = int.Parse(Console.ReadLine().Split()[0]);
+			Console.WriteLine("Enter elements");
+			string resonse = Console.ReadLine();
+			int[] array = new int[n];
+			int k = 0;
+			foreach (string s in resonse.Split())
+				array[k++] = int.Parse(s);
+			var bst = new BinarySearchTree<int>();
+			foreach (var item in array) {
+				bst.Add(item);
+			}
+			foreach (var item in bst) {
+				Console.Write($"{item} ");
+			}
 			Console.WriteLine();
-			foreach (var s in sorted)
-				Console.WriteLine(s);
 			Console.ReadKey();
 		}
 	}
