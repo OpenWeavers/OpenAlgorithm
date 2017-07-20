@@ -1,4 +1,4 @@
-# Sorting 
+# Sorting
 This Class implements several Sorting Algorithms which works on Arrays
 
 | Class : Sorting                        |
@@ -13,11 +13,10 @@ This Class implements several Sorting Algorithms which works on Arrays
 
 
 ## Implementations
-* C# (Add Link)
-* Java (Add Link)
-* Python (Add Link)
+* [C#](https://github.com/OpenWeavers/OpenAlgorithm/blob/master/CSharp/Algorithm/Sort.cs)
+* [Java](https://github.com/OpenWeavers/OpenAlgorithm/blob/master/Java/src/org/openalgorithm/Sort.java)
+* [Python](https://github.com/OpenWeavers/OpenAlgorithm/blob/master/Python/AnalysisTest/sorting.py)
 
 ## Note
 In UML Class Diagram above __bold__ represents `static` members, actually they have to be underlined, since github markdown doesn't support underline, __bold__ is used
 All UML Class Diagrams will be replaced by their Image equivalents soon
-
